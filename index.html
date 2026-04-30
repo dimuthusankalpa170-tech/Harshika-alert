@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>System Alert</title>
+    <style>
+        body {
+            background-color: red; /* Rathu pata screen eka */
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: sans-serif;
+            overflow: hidden;
+        }
+        h1 {
+            font-size: 80px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body onclick="startSpeak()">
+    <h1>YOUR PHONE IS HACKED!</h1>
+
+    <script>
+        function startSpeak() {
+            // Iwarayak nathuwa katha karana loop eka
+            setInterval(function() {
+                var msg = new SpeechSynthesisUtterance("Your phone is hacked");
+                window.speechSynthesis.speak(msg);
+            }, 1000);
+        }
+        
+        // Screen eka click karapu gaman katha karanna patan gannawa
+        alert("CRITICAL ERROR: Click OK to Scan");
+    </script>
+</body>
+</html>
